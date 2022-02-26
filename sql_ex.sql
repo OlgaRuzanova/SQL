@@ -47,4 +47,24 @@
  INNER JOIN PC
  ON Product.model = PC.model 
  WHERE PC.speed >=450;
+ 
+  -- 10. Найдите модели принтеров, имеющих самую высокую цену. Вывести: model, price
+ SELECT DISTINCT model, price FROM Printer
+ WHERE price = (SELECT MAX(price)FROM Printer);
+ 
+  -- 11. Найдите среднюю скорость ПК.
+ SELECT AVG (speed) AS Avg_speed
+ FROM PC;
+ 
+  -- 12. Найдите среднюю скорость ПК-блокнотов, цена которых превышает 1000 дол.
+ SELECT AVG (speed) AS AVG_speed
+ FROM Laptop
+ WHERE price > 1000;
+ 
+  -- 13. Найдите среднюю скорость ПК, выпущенных производителем A.
+ SELECT AVG (speed) AS AVG_speed
+ from PC JOIN Product on
+ Product.model = PC.model
+ WHERE Product.maker = 'A';
+
 
