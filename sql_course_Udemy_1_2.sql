@@ -1,5 +1,5 @@
 -- 1. Получите описание таблицы REGIONS, используя её полное имя.
-DESCRIBE hr.regions;
+DESCRIBE hr.regions; 
 
 -- 2. Получите описание таблицы COUNTRIES, используя её полное имя.
 DESC hr.countries;
