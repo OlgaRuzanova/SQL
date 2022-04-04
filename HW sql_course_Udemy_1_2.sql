@@ -5,7 +5,7 @@ DESCRIBE hr.regions;
 DESC hr.countries;
 
 -- 3. Получите описание таблицы JOBS, используя её короткое имя.
-DESCRIBE jobs;
+DESCRIBE jobs; 
 
 -- 4. Получите описание таблицы LOCATIONS, используя её короткое имя.
 DESC locations;
