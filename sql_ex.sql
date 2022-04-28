@@ -67,4 +67,18 @@
  Product.model = PC.model
  WHERE Product.maker = 'A';
 
+ -- 14. Найдите класс, имя и страну для кораблей из таблицы Ships, имеющих не менее 10 орудий.
+ SELECT Classes.class, Ships.name, Classes.country 
+ FROM Ships JOIN Classes 
+ ON Ships.class = Classes.class
+ WHERE Classes.numGuns >= 10
+ 
+  -- 15. Найдите размеры жестких дисков, совпадающих у двух и более PC. Вывести: HD
+ SELECT hd
+ FROM PC
+ GROUP BY hd
+ HAVING COUNT(model)>=2
+ 
+ 
+
 
