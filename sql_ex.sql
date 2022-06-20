@@ -90,7 +90,7 @@
  SELECT DISTINCT Product.type, Laptop.model, Laptop.speed
  FROM Product JOIN Laptop
  on Laptop.speed < ALL (SELECT speed FROM PC)
- WHERE Laptop.model = Product.model AND Product.type='Laptop'
+ WHERE Laptop.model = Product.model AND Product.type='Laptop';
  
 
 
