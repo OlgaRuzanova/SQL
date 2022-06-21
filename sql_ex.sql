@@ -92,5 +92,10 @@
  on Laptop.speed < ALL (SELECT speed FROM PC)
  WHERE Laptop.model = Product.model AND Product.type='Laptop';
  
+  -- 18. Найдите производителей самых дешевых цветных принтеров. Вывести: maker, price
+ SELECT DISTINCT  Product.maker, Printer.price FROM Printer  
+ JOIN Product ON Product.type='Printer'
+ WHERE Printer.price = (SELECT MIN(price) FROM Printer WHERE color='y') 
+ AND Product.model=Printer.model AND Printer.color='y'
 
 
