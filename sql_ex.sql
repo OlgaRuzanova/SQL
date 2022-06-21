@@ -96,6 +96,6 @@
  SELECT DISTINCT  Product.maker, Printer.price FROM Printer  
  JOIN Product ON Product.type='Printer'
  WHERE Printer.price = (SELECT MIN(price) FROM Printer WHERE color='y') 
- AND Product.model=Printer.model AND Printer.color='y'
+ AND Product.model=Printer.model AND Printer.color='y';
 
 
