@@ -98,4 +98,10 @@
  WHERE Printer.price = (SELECT MIN(price) FROM Printer WHERE color='y') 
  AND Product.model=Printer.model AND Printer.color='y';
 
+ -- 19. Для каждого производителя, имеющего модели в таблице Laptop, найдите средний размер экрана выпускаемых им ПК-блокнотов.
+ --     Вывести: maker, средний размер экрана.
+ SELECT Product.maker, AVG(Laptop.screen) FROM Product
+ JOIN Laptop ON Product.model=Laptop.model
+ WHERE Product.type='Laptop'
+ GROUP BY Product.maker
 
