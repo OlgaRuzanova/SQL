@@ -103,5 +103,5 @@
  SELECT Product.maker, AVG(Laptop.screen) FROM Product
  JOIN Laptop ON Product.model=Laptop.model
  WHERE Product.type='Laptop'
- GROUP BY Product.maker
+ GROUP BY Product.maker;
 
