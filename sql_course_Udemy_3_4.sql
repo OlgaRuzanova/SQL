@@ -64,6 +64,14 @@ ORDER BY job_id, first_name DESC;
  WHERE phone_number LIKE '___.___.____';
  
  -- 15. Получите список всех сотрудников, у которых последняя буква в имени равна 'm' и длина имени больше 5ти.
+ SELECT * from hr.employees
+ WHERE SUBSTR(first_name, -1) = 'm' AND LENGTH(first_name)>5;
+ 
  -- 16. Выведите дату следующей пятницы.
+ SELECT NEXT_DAY(SYSDATE, 5) from dual;
+ 
  -- 17. Получите список всех сотрудников, которые работают в компании больше 12 лет и 6ти месяцев (150 месяцев).
+ SELECT * from hr.employees
+ WHERE MONTHS_BETWEEN(SYSDATE, hire_date) > 150;
+ 
 
