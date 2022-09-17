@@ -74,4 +74,45 @@ ORDER BY job_id, first_name DESC;
  SELECT * from hr.employees
  WHERE MONTHS_BETWEEN(SYSDATE, hire_date) > 150;
  
+  -- 18. Выведите телефонный номер, заменив в значении PHONE_NUMBER все '.' на '-'.
+ SELECT REPLACE (PHONE_NUMBER,'.','-') PHONE_NUMBER_NEW from hr.employees;
+
+ -- 19. Выведите имя, email, job_id для всех работников в формате: STEVEN sking Ad_Pres
+ SELECT UPPER(FIRST_NAME) name,LOWER(EMAIL) email, INITCAP(JOB_ID) JOB_ID from hr.employees;
+
+ -- 20. Выведите информацию о имени работника и его з/п, не используя символ || , в таком виде: Steven24000
+ SELECT CONCAT (FIRST_NAME,SALARY) name_salary from hr.employees;
+
+ -- 21. Выведите информацию о дате приёма сотрудника на работу, округлённой дате приёма на работу до месяца и первом дне года приёма на работу.
+ SELECT HIRE_DATE, ROUND(HIRE_DATE,'MM'), TRUNC(HIRE_DATE,'YYYY' )from hr.employees;
+
+ -- 22. Выведите информацию о имени и фамилии всех работников. Имя должно состоять из 10 символов и если длина имени меньше 10, то дополняйте до 10 символов знаком $. Фамилия должна состоять из 15
+ -- символов и если длина фамилии меньше 15, то перед фамилией ставьте столько знаков ! сколько необходимо.
+ SELECT RPAD(FIRST_NAME,10,'$') f_name, LPAD(LAST_NAME,15,'!') l_name from hr.employees;
+
+ -- 23. Выведите имя сотрудника и позицию второй буквы ‘a’ в его имени.
+ SELECT FIRST_NAME from hr.employees
+ WHERE INSTR(FIRST_NAME,'a')=2;
+
+ -- 24. Выведите на экран текст '!!!HELLO!! MY FRIEND!!!!!!!!' и тот же текст, но без символа восклицательный знак в начале и конце текста.
+SELECT '!!!HELLO!! MY FRIEND!!!!!!!!' from dual;
+SELECT TRIM('!' from '!!!HELLO!! MY FRIEND!!!!!!!!') from dual;
+
+14.Выведите информацию о:
+• з/п работника,
+• з/п умноженной на коэффициент 3.1415 ,
+• округлённый до целого значения вариант увеличенной з/п-ты,
+• целое количество тысяч из увеличенной з/п.
+SELECT SALARY,(SALARY * 3.1415) salary_new, 
+ROUND(SALARY * 3.1415) salary_int, 
+TRUNC(SALARY * 3.1415,-3)/1000
+from hr.employees;
+15.Выведите информацию о:
+• дате приёма сотрудника на работу,
+• дате, которая была через пол года, после принятия сотрудника на
+работу,
+• дате последнего дня в месяце принятия сотрудника на работу.
+
+SELECT HIRE_DATE, ADD_MONTHS(HIRE_DATE,6) HIRE_DATE_6M, LAST_DAY(HIRE_DATE) from hr.employees;
+
 
