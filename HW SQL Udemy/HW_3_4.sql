@@ -114,4 +114,3 @@ SELECT TRIM('!' from '!!!HELLO!! MY FRIEND!!!!!!!!') from dual;
  -- • дате последнего дня в месяце принятия сотрудника на работу.
  SELECT HIRE_DATE, ADD_MONTHS(HIRE_DATE,6) HIRE_DATE_6M, LAST_DAY(HIRE_DATE) from hr.employees;
 
-
