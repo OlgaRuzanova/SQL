@@ -51,7 +51,8 @@
  SELECT FIRST_NAME, COMMISSION_PCT, NVL2(COMMISSION_PCT, 'YES', 'NO') bonuses
  from hr.employees;
 
- -- 12.Для каждой страны показать регион, в котором она находится: 1- Europe, 2-America, 3-Asia, 4-Africa . Выполнить данное задание, не используя функционал JOIN. Используйте DECODE.
+ -- 12.Для каждой страны показать регион, в котором она находится: 1- Europe, 2-America, 3-Asia, 4-Africa.
+ -- Выполнить данное задание, не используя функционал JOIN. Используйте DECODE.
  select country_name,
  DECODE(REGION_ID, 
  1, 'Europe',
