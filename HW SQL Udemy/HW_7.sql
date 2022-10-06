@@ -42,6 +42,8 @@ where TO_CHAR (man.hire_date, 'YYYY') = '2005'
 and emp.hire_date < TO_DATE ('01012005', 'DDMMYYYY');
        
  -- 7. Выведите название страны и название региона этой страны, используя natural join.
+ select country_name, region_name
+ from countries natural join regions;
  
  -- 8. Выведите имена, фамилии и з/п сотрудников, которые получают меньше, чем (минимальная з/п по их специальности + 1000).
  
